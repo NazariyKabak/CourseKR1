@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="https://jakarta.ee/xml/ns/jakartaee">
+<h:head>
+    <title>View Souvenirs</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:dataTable value="#{souvenirBean.allSouvenirs}" var="souvenir">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{souvenir.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{souvenir.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Manufacturer Details</f:facet>
+                #{souvenir.manufacturerDetails}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Release Date</f:facet>
+                #{souvenir.releaseDate}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Price</f:facet>
+                #{souvenir.price}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Actions</f:facet>
+                <h:commandButton value="Edit" action="#{souvenirBean.updateSouvenir}">
+                    <f:setPropertyActionListener target="#{souvenirBean.souvenir}" value="#{souvenir}"/>
+                </h:commandButton>
+                <h:commandButton value="Delete" action="#{souvenirBean.deleteSouvenir}">
+                    <f:setPropertyActionListener target="#{souvenirBean.souvenirId}" value="#{souvenir.id}"/>
+                </h:commandButton>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

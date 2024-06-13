@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Add Manufacturer</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Name:"/>
+            <h:inputText id="name" value="#{manufacturerBean.manufacturer.name}"/>
+
+            <h:outputLabel for="country" value="Country:"/>
+            <h:inputText id="country" value="#{manufacturerBean.manufacturer.country}"/>
+
+            <h:commandButton value="Add Manufacturer" action="#{manufacturerBean.addManufacturer}"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

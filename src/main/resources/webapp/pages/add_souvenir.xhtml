@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Add Souvenir</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Name:"/>
+            <h:inputText id="name" value="#{souvenirBean.souvenir.name}"/>
+
+            <h:outputLabel for="manufacturerDetails" value="Manufacturer Details:"/>
+            <h:inputText id="manufacturerDetails" value="#{souvenirBean.souvenir.manufacturerDetails}"/>
+
+            <h:outputLabel for="releaseDate" value="Release Date:"/>
+            <h:inputText id="releaseDate" value="#{souvenirBean.souvenir.releaseDate}"/>
+
+            <h:outputLabel for="price" value="Price:"/>
+            <h:inputText id="price" value="#{souvenirBean.souvenir.price}"/>
+
+            <h:commandButton value="Add Souvenir" action="#{souvenirBean.addSouvenir}"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
